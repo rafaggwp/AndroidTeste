@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="add_note">Add Note</string>
+    <string name="notes">Notes</string>
+    <string name="example_note">Note Example</string>
+    <string name="noteId">NoteId</string>
+    <string name="confirm">Are you sure?</string>
+    <string name="confirmD">Are you sure that you want to delete?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+</resources>
