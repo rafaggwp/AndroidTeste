@@ -8,6 +8,8 @@
     <string name="confirmD">Are you sure that you want to delete?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="title">Title</string>
+    <string name="notew">Write your note...</string>
 
 
 </resources>

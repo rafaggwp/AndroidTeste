@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Notas</string>
-    <string name="add_note">Adicionar Nota</string>
-    <string name="notes">Notas</string>
-    <string name="example_note">Nota Exemplo</string>
-    <string name="noteId">NotaId</string>
-    <string name="confirm">Tem a certeza?</string>
-    <string name="confirmD">Tem a certeza que pretende eliminar?</string>
-    <string name="yes">Sim</string>
-    <string name="no">Não</string>
+<string name="app_name">Notas</string>
+<string name="add_note">Adicionar Nota</string>
+<string name="notes">Notas</string>
+<string name="example_note">Nota Exemplo</string>
+<string name="noteId">NotaId</string>
+<string name="confirm">Tem a certeza?</string>
+<string name="confirmD">Tem a certeza que pretende eliminar?</string>
+<string name="yes">Sim</string>
+<string name="no">Não</string>
+    <string name="title">Titulo</string>
+    <string name="notew">Escreva a sua nota...</string>
 </resources>
