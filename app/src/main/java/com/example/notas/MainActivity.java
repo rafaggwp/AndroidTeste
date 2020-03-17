@@ -2,11 +2,10 @@ package com.example.notas;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,11 +14,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import com.example.notas.adpater.AdapterNote;
+import com.example.notas.db.DB;
 import java.util.ArrayList;
-import java.util.HashSet;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    DB mDbHelper;
+    SQLiteDatabase db;
+    Cursor c, c_notas;
+    ListView lista;
+    AdapterNote adapter;
 
     static ArrayList<String> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
@@ -50,16 +56,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         ListView listView = (ListView) findViewById(R.id.listView);
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notas", Context.MODE_PRIVATE);
-
-        HashSet<String> set = (HashSet<String>) sharedPreferences.getStringSet(getString(R.string.notes), null);
-
-        if (set==null){
-            notes.add(getString(R.string.example_note));
-        } else{
-            notes = new ArrayList(set);
-        }
 
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, notes);
 
@@ -91,10 +89,7 @@ public class MainActivity extends AppCompatActivity {
                                 notes.remove(itemDelete);
                                 arrayAdapter.notifyDataSetChanged();
 
-                                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.notas", Context.MODE_PRIVATE);
-                                HashSet<String> set = new HashSet(MainActivity.notes);
 
-                                sharedPreferences.edit().putStringSet(getString(R.string.notes), set).apply();
                             }
                         }
                         ).setNegativeButton(getString(R.string.no), null)
